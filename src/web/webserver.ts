@@ -14,7 +14,7 @@ export default class Webserver {
     constructor(private appservice: Appservice, private store: StickerStore) {
         this.app = (<any>appservice).app; // HACK: Private variable access
 
-        this.app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+        this.app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
         this.app.set('view engine', 'handlebars');
         //this.app.set('views', path.join(__dirname, 'views'));
 

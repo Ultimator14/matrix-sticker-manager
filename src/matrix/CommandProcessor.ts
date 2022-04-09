@@ -38,8 +38,8 @@ export class CommandProcessor {
             } else return this.client.sendNotice(roomId, "There's nothing for me to cancel");
         } else {
             const htmlMessage = "<p>Sticker bot help:<br /><pre><code>" +
-                `!stickers newpack       - Create a new sticker pack\n` +
-                `!stickers cancel        - Cancels whatever operation you're doing\n` +
+                "!stickers newpack       - Create a new sticker pack\n" +
+                "!stickers cancel        - Cancels whatever operation you're doing\n" +
                 "!stickers help          - This menu\n" +
                 "</code></pre></p>" +
                 "<p>For help or more information, visit <a href='https://matrix.to/#/#help:t2bot.io'>#help:t2bot.io</a></p>";

@@ -213,4 +213,9 @@ export class StickerStore {
 
         return pack;
     }
+
+    public async deleteAllStickerpacks() {
+        this.packsToRooms = {};
+        await this.saveData();
+    }
 }

@@ -36,10 +36,14 @@ export class CommandProcessor {
                 BuilderRegistry.deregister(roomId);
                 return this.client.sendNotice(roomId, "Your current operation has been canceled");
             } else return this.client.sendNotice(roomId, "There's nothing for me to cancel");
+        } else if (command === "deleteall") {
+            await this.store.deleteAllStickerpacks();
+            return this.client.sendNotice(roomId, "Deleted all sticker packs. Previous links will no longer work.");
         } else {
             const htmlMessage = "<p>Sticker bot help:<br /><pre><code>" +
                 "!stickers newpack       - Create a new sticker pack\n" +
                 "!stickers cancel        - Cancels whatever operation you're doing\n" +
+                "!stickers deleteall     - Deletes all created sticker packs\n" +
                 "!stickers help          - This menu\n" +
                 "</code></pre></p>" +
                 "<p>For help or more information, visit <a href='https://matrix.to/#/#help:t2bot.io'>#help:t2bot.io</a></p>";
